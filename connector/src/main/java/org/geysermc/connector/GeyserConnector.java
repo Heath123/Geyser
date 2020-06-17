@@ -91,6 +91,9 @@ public class GeyserConnector {
 
     private Metrics metrics;
 
+    @Getter
+    private static String workingDirectory;
+
     private GeyserConnector(PlatformType platformType, GeyserBootstrap bootstrap) {
         long startupTime = System.currentTimeMillis();
 
@@ -100,6 +103,8 @@ public class GeyserConnector {
 
         GeyserLogger logger = bootstrap.getGeyserLogger();
         GeyserConfiguration config = bootstrap.getGeyserConfig();
+
+        this.workingDirectory = bootstrap.getWorkingDirectory();
 
         this.platformType = platformType;
 

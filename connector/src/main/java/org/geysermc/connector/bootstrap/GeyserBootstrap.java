@@ -83,4 +83,13 @@ public interface GeyserBootstrap {
     default WorldManager getWorldManager() {
         return DEFAULT_CHUNK_MANAGER;
     }
+
+    /**
+     * Returns the current working directory
+     *
+     * @return the current working directory
+     */
+    default String getWorkingDirectory() {
+        return "";
+    }
 }

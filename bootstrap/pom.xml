@@ -35,6 +35,7 @@
         </repository>
     </repositories>
     <modules>
+        <module>android</module>
         <module>bukkit</module>
         <module>bungeecord</module>
         <module>sponge</module>

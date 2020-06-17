@@ -51,7 +51,7 @@ public class FileUtils {
     }
 
     /**
-     * Open the specified file or copy if from resources
+     * Open the specified file or copy it from resources
      *
      * @param name File and resource name
      * @param fallback Formatting callback
@@ -63,7 +63,7 @@ public class FileUtils {
     }
 
     /**
-     * Open the specified file or copy if from resources
+     * Open the specified file or copy it from resources
      *
      * @param file File to open
      * @param name Name of the resource get if needed
@@ -76,7 +76,6 @@ public class FileUtils {
             file.createNewFile();
             FileOutputStream fos = new FileOutputStream(file);
             InputStream input = GeyserConnector.class.getResourceAsStream("/" + name); // resources need leading "/" prefix
-
             byte[] bytes = new byte[input.available()];
 
             input.read(bytes);

@@ -38,6 +38,10 @@ import org.geysermc.connector.command.CommandSender;
 @Log4j2
 public class GeyserStandaloneLogger extends SimpleTerminalConsole implements org.geysermc.connector.GeyserLogger, CommandSender {
 
+    static {
+        System.setProperty("log4j2.loggerContextFactory", "org.apache.logging.log4j.core.impl.Log4jContextFactory");
+    }
+
     private boolean colored = true;
 
     @Override

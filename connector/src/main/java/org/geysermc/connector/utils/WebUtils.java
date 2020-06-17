@@ -63,6 +63,9 @@ public class WebUtils {
 
             return content.toString();
         } catch (Exception e) {
+            System.out.println("DOWNLOAD Error: ");
+            // TODO: Remove
+            e.printStackTrace();
             return e.getMessage();
         }
     }

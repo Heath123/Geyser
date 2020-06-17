@@ -47,6 +47,8 @@ public class PacketTranslatorRegistry<T> {
     private static final ObjectArrayList<Class<?>> IGNORED_PACKETS = new ObjectArrayList<>();
 
     static {
+        try {
+
         Reflections ref = new Reflections("org.geysermc.connector.network.translators");
 
         for (Class<?> clazz : ref.getTypesAnnotatedWith(Translator.class)) {
@@ -76,6 +78,11 @@ public class PacketTranslatorRegistry<T> {
         IGNORED_PACKETS.add(ServerKeepAlivePacket.class); // Handled by MCProtocolLib
         IGNORED_PACKETS.add(ServerUpdateLightPacket.class); // Light is handled on Bedrock for us
         IGNORED_PACKETS.add(ServerPlayerListDataPacket.class); // Cant be implemented in bedrock
+
+        } catch (Exception e) {
+            System.out.println("ERR!!!");
+            e.printStackTrace();
+        }
     }
 
     private PacketTranslatorRegistry() {
