@@ -60,10 +60,11 @@ public class ArmorStandEntity extends LivingEntity {
             byte xd = (byte) entityMetadata.getValue();
 
             // Check if the armour stand is invisible and store accordingly
-            if ((xd & 0x20) == 0x20) {
+            // Hack to always make them visible by circuit10
+            /* if ((xd & 0x20) == 0x20) {
                 metadata.put(EntityData.SCALE, 0.0f);
                 isInvisible = true;
-            }
+            } */
         } else if (entityMetadata.getId() == 14 && entityMetadata.getType() == MetadataType.BYTE) {
             byte xd = (byte) entityMetadata.getValue();
 
