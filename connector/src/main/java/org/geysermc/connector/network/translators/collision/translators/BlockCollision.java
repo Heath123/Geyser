@@ -80,6 +80,8 @@ public class BlockCollision {
                 // Max steppable distance in Minecraft as far as we know is 0.5625 blocks (for beds)
                 if (boxMaxY - playerMinY <= 0.5625) {
                     playerCollision.translate(0, boxMaxY - playerMinY, 0);
+                    if ((boxMaxY - playerMinY) > 0.01)
+                    System.out.println("Pushed up by " + (boxMaxY - playerMinY));
                     // Update player Y for next collision box
                     playerMinY = playerCollision.getMiddleY() - (playerCollision.getSizeY() / 2);
                 }

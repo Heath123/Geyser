@@ -196,7 +196,6 @@ public class BedrockMovePlayerTranslator extends PacketTranslator<MovePlayerPack
         return position;
     }
 
-    // TODO: This makes the player look upwards for some reason, rotation values must be wrong
     public void recalculatePosition(GeyserSession session) {
         PlayerEntity entity = session.getPlayerEntity();
         // Gravity might need to be reset...
